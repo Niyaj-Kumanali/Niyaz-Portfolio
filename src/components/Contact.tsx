@@ -10,7 +10,7 @@ import {
     Alert
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Github, Linkedin, Mail, MapIcon, Pin, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, MapIcon, Send } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { useState } from 'react';
 import { Section, SectionInner } from './common/Section';
