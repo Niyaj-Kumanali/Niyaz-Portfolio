@@ -2,6 +2,7 @@ import { Box, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Section, SectionInner } from './common/Section';
+import { MYINFO } from '../data/info';
 
 const FooterLink = styled('button')({
     color: 'rgba(255, 255, 255, 0.5)',
@@ -49,17 +50,17 @@ const Footer = () => {
                                 letterSpacing: '-0.05em'
                             }}
                         >
-                            NIYAZ.
+                            {MYINFO.FIRST_NAME}.
                         </Typography>
                         <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.5)', maxWidth: 400, mb: 6, fontSize: '1.1rem' }}>
                             Mastering Backend Engineering and Database Optimization to build ultra-low-latency, production-ready systems.
                         </Typography>
 
                         <Stack direction="row" spacing={3}>
-                            <SocialIcon href="https://github.com/niyaj-kumanali" target="_blank">
+                            <SocialIcon href={MYINFO.GITHUB} target="_blank">
                                 <Github size={24} />
                             </SocialIcon>
-                            <SocialIcon href="https://linkedin.com/in/niyaj-kumanali" target="_blank">
+                            <SocialIcon href={MYINFO.LINKEDIN} target="_blank">
                                 <Linkedin size={24} />
                             </SocialIcon>
                         </Stack>
@@ -74,19 +75,19 @@ const Footer = () => {
                                 <Stack direction="row" spacing={2} alignItems="center">
                                     <Mail size={18} color="rgba(255,255,255,0.4)" />
                                     <Typography sx={{ color: '#fff', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.9rem' }}>
-                                        niyajkumanali@gmail.com
+                                        {MYINFO.EMAIL}
                                     </Typography>
                                 </Stack>
                                 <Stack direction="row" spacing={2} alignItems="center">
                                     <Phone size={18} color="rgba(255,255,255,0.4)" />
                                     <Typography sx={{ color: '#fff', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.9rem' }}>
-                                        +91 82170 97121
+                                        {MYINFO.PHONE}
                                     </Typography>
                                 </Stack>
                                 <Stack direction="row" spacing={2} alignItems="center">
                                     <MapPin size={18} color="rgba(255,255,255,0.4)" />
                                     <Typography sx={{ color: '#fff', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.9rem' }}>
-                                        Bengaluru, India
+                                        {MYINFO.ADDRESS}
                                     </Typography>
                                 </Stack>
                             </Stack>
@@ -111,7 +112,7 @@ const Footer = () => {
 
                 <Box sx={{ pt: 2, borderTop: '1px solid rgba(255, 255, 255, 0.05)', display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'center', alignItems: 'center', gap: 4 }}>
                     <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.3)', fontFamily: "'JetBrains Mono', monospace" }}>
-                        &copy; {new Date().getFullYear()} NIYAZ. ALL RIGHTS RESERVED.
+                        &copy; {new Date().getFullYear()} {MYINFO.FIRST_NAME}. ALL RIGHTS RESERVED.
                     </Typography>
                 </Box>
             </SectionInner>

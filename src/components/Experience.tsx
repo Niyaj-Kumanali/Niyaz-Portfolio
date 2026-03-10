@@ -3,20 +3,8 @@ import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { Section, SectionInner } from './common/Section';
+import { EXPERIENCE_DATA } from '../data/info';
 
-const experienceData = [
-    {
-        role: "Software Engineer",
-        company: "Talentpace Pvt Ltd",
-        location: "Bengaluru, India",
-        period: "NOV 2023 – PRESENT",
-        highlights: [
-            "Reduced inventory discrepancies by ~80% for Lenovo India by deploying automated partner serial-level validation workflows.",
-            "Optimized CDMS data pipelines for 10k+ devices, increasing processing throughput by ~60% across the global sales lifecycle.",
-            "Architected a real-time IoT cold-chain monitoring ecosystem, integrating ML-driven alerts to boost operational efficiency by ~30%."
-        ]
-    }
-];
 
 const Experience = () => {
     return (
@@ -40,7 +28,7 @@ const Experience = () => {
                     />
 
                     <Stack spacing={12}>
-                        {experienceData.map((exp, index) => (
+                        {EXPERIENCE_DATA.map((exp, index) => (
                             <Box
                                 key={index}
                                 component={motion.div}

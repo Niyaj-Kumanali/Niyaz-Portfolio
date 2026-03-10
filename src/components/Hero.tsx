@@ -2,9 +2,10 @@ import { Box, Typography, Button, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Section, SectionInner } from './common/Section';
+import { MYINFO } from '../data/info';
 
 const Hero = () => {
-    const nameParts = ["Niyaz", "Kumanali"];
+    const nameParts = [MYINFO.FIRST_NAME, MYINFO.LAST_NAME];
 
     const triggerNav = (index: number) => {
         window.dispatchEvent(new CustomEvent('navigateToSection', { detail: { index } }));

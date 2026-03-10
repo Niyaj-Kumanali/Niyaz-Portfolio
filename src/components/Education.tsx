@@ -2,16 +2,9 @@ import { Box, Typography, Stack, alpha } from '@mui/material';
 import { motion } from 'framer-motion';
 import SectionHeading from './SectionHeading';
 import { Section, SectionInner } from './common/Section';
+import { EDUCATION_DATA } from '../data/info';
 
 const Education = () => {
-    const education = [
-        {
-            degree: "BE | COMPUTER SCIENCE",
-            institution: "VSM's Somashekhar R. Kothiwale Institute of Technology",
-            period: "JUN 2019 – MAY 2023",
-            location: "Belagavi, India"
-        }
-    ];
 
     return (
         <Section id="education">
@@ -21,7 +14,7 @@ const Education = () => {
                         <SectionHeading title="EDUCATION." sx={{ mb: 0 }} />
                     </Stack>
 
-                    {education.map((edu, index) => (
+                    {EDUCATION_DATA.map((edu, index) => (
                         <Box
                             key={index}
                             component={motion.div}

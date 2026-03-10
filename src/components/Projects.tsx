@@ -8,6 +8,7 @@ import {
 import { styled } from '@mui/material/styles';
 import SectionHeading from './SectionHeading';
 import { Section, SectionInner } from './common/Section';
+import { PROJECTS_DATA } from '../data/info';
 
 const ImageContainer = styled(motion.div)({
     width: '100%',
@@ -34,32 +35,6 @@ const ProjectImage = styled(motion.img)({
 });
 
 const Projects = () => {
-    const projects = [
-        {
-            title: "Partner Inventory Management",
-            role: "Real-time Architecture @ Lenovo India",
-            description: "Centralized real-time validation for 10k+ serials across 200+ partners, slashing manual reconciliation by ~70% with <15s latency.",
-            image: "/assets/projects/inventory_management_dashboard_1773048881187.png",
-            tags: ["SQL SERVER", "ASP.NET", "REACT", "C#"],
-            specs: { label: "Outcome", value: "~80% Accuracy Increase" }
-        },
-        {
-            title: "CDMS Platform",
-            role: "Data Workflows @ Lenovo India",
-            description: "Modernized data workflows for 10k+ devices across 5+ lifecycle stages, boosting throughput by ~60% and ensuring global data integrity.",
-            image: "/assets/projects/data_workflow_platform_1773048901041.png",
-            tags: ["SQL SERVER", "ASP.NET", "SSIS"],
-            specs: { label: "Impact", value: "~60% Throughput Gain" }
-        },
-        {
-            title: "IoT Cold-Chain Monitoring",
-            role: "Microservices @ UrjaLinks",
-            description: "Scaled microservices for 100+ IoT devices, preventing temperature excursions by ~85% through ML-driven predictive monitoring.",
-            image: "/assets/projects/iot_coldchain_monitor_1773048948862.png",
-            tags: ["SPRING BOOT", "KAFKA", "MQTT", "AWS", "INFLUXDB", "POSTGRESQL"],
-            specs: { label: "Alerting", value: "~85% Excursion Reduction" }
-        }
-    ];
 
     return (
         <Section id="projects">
@@ -69,7 +44,7 @@ const Projects = () => {
                 </Box>
 
                 <Stack spacing={20} sx={{ mt: 4 }}>
-                    {projects.map((project, index) => {
+                    {PROJECTS_DATA.map((project, index) => {
                         return (
                             <Box
                                 key={index}

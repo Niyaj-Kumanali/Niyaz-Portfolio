@@ -3,35 +3,9 @@ import { motion } from 'framer-motion';
 import { Award } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { Section, SectionInner } from './common/Section';
+import { CERTIFICATIONS_DATA } from '../data/info';
 
 const Certifications = () => {
-    const certifications = [
-        {
-            title: "Data Engineering using Databricks on AWS and Azure",
-            issuer: "Udemy",
-            period: "Oct 2024 – Dec 2024"
-        },
-        {
-            title: "Jenkins: Jobs, Pipelines, CI/CD and DevOps for Beginners",
-            issuer: "Udemy",
-            period: "Jul 2024 – Aug 2024"
-        },
-        {
-            title: "Java Full Stack Development",
-            issuer: "JSpiders",
-            period: "Jul 2023 – Dec 2023"
-        },
-        {
-            title: "Java with DSA and System Design",
-            issuer: "PWSkills",
-            period: "Jan 2023 – Sep 2023"
-        },
-        {
-            title: "The Complete 2023 Web Development Bootcamp",
-            issuer: "Udemy",
-            period: "Apr 2023 – Jun 2023"
-        }
-    ];
 
     return (
         <Section id="certifications">
@@ -41,7 +15,7 @@ const Certifications = () => {
                 </Stack>
 
                 <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 3 }}>
-                    {certifications.map((cert, index) => (
+                    {CERTIFICATIONS_DATA.map((cert, index) => (
                         <Box
                             key={index}
                             component={motion.div}

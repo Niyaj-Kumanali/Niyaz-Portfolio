@@ -14,6 +14,7 @@ import { Github, Linkedin, Mail, MapIcon, Send } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { useState } from 'react';
 import { Section, SectionInner } from './common/Section';
+import { MYINFO } from '../data/info';
 
 const BrutalistInput = styled(TextField)({
     '& .MuiOutlinedInput-root': {
@@ -107,19 +108,19 @@ const Contact = () => {
                         </Typography>
 
                         <Stack direction="row" spacing={0} sx={{ width: '100%', mb: 3 }}>
-                            <SocialButton href="https://github.com/niyaj-kumanali" target="_blank" whileHover={{ scale: 0.98 }}>
+                            <SocialButton href={MYINFO.GITHUB} target="_blank" whileHover={{ scale: 0.98 }}>
                                 <Github size={32} />
                                 <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem' }}>GITHUB</Typography>
                             </SocialButton>
-                            <SocialButton href="https://linkedin.com/in/niyaj-kumanali" target="_blank" whileHover={{ scale: 0.98 }}>
+                            <SocialButton href={MYINFO.LINKEDIN} target="_blank" whileHover={{ scale: 0.98 }}>
                                 <Linkedin size={32} />
                                 <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem' }}>LINKEDIN</Typography>
                             </SocialButton>
-                            <SocialButton href="mailto:niyajkumanali@gmail.com" whileHover={{ scale: 0.98 }}>
+                            <SocialButton href={`mailto:${MYINFO.EMAIL}`} whileHover={{ scale: 0.98 }}>
                                 <Mail size={32} />
                                 <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem' }}>EMAIL</Typography>
                             </SocialButton>
-                            <SocialButton href="https://www.google.com/maps/search/?api=1&query=Bengaluru,+India" target="_blank" whileHover={{ scale: 0.98 }}>
+                            <SocialButton href={MYINFO.LOCATION_URL} target="_blank" whileHover={{ scale: 0.98 }}>
                                 <MapIcon size={32} />
                                 <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem' }}>LOCATION</Typography>
                             </SocialButton>

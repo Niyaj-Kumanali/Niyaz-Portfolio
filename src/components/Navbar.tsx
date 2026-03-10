@@ -8,6 +8,7 @@ import {
     alpha
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { MYINFO } from '../data/info';
 
 const NavContainer = styled(motion.div)({
     position: 'fixed',
@@ -85,7 +86,7 @@ const Navbar = () => {
                                 padding: 0,
                             }}
                         >
-                            NIYAZ.
+                            {MYINFO.FIRST_NAME}.
                         </Typography>
 
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
