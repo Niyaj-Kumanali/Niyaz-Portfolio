@@ -203,7 +203,7 @@ const Hero = () => {
                                 whileTap={{ scale: 0.95 }}
                                 variant="outlined"
                                 size="large"
-                                onClick={() => triggerNav(5)}
+                                onClick={() => triggerNav(6)}
                                 sx={{
                                     fontSize: '1.1rem',
                                     px: 8,

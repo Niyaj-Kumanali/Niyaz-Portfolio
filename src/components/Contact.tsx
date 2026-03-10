@@ -43,12 +43,12 @@ const BrutalistInput = styled(TextField)({
 
 const SocialButton = styled(motion.a)(({ theme }) => ({
     flex: 1,
-    height: 120,
+    height: 100,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: theme.spacing(2),
+    gap: theme.spacing(1.5),
     border: '1px solid #222',
     textDecoration: 'none',
     color: '#fff',
@@ -72,7 +72,7 @@ const Contact = () => {
         const data = new FormData(form);
 
         try {
-            const response = await fetch("https://formspree.io/f/mqakvvoj", {
+            const response = await fetch("https://formspree.io/f/xpqypzae", {
                 method: "POST",
                 body: data,
                 headers: {
@@ -96,43 +96,43 @@ const Contact = () => {
     return (
         <Section id="contact">
             <SectionInner>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-start', width: '100%' }}>
-                    <SectionHeading title="GET IN TOUCH." />
+                <Box sx={{ display: 'flex', justifyContent: 'flex-start', width: '100%', mb: 2 }}>
+                    <SectionHeading title="GET IN TOUCH." sx={{ mb: 0 }} />
                 </Box>
 
-                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: { xs: 8, lg: 15 } }}>
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: { xs: 4, lg: 8 } }}>
                     <Box>
-                        <Typography variant="h4" sx={{ mb: 6, fontWeight: 300, color: 'rgba(255, 255, 255, 0.6)', fontFamily: "'Inter', sans-serif" }}>
+                        <Typography variant="h5" sx={{ mb: 4, fontWeight: 300, color: 'rgba(255, 255, 255, 0.6)', fontFamily: "'Inter', sans-serif", fontSize: '1.5rem' }}>
                             Ready to build something scalable? Let's discuss your ecosystem's architecture.
                         </Typography>
 
-                        <Stack direction="row" spacing={0} sx={{ width: '100%', mb: 5 }}>
+                        <Stack direction="row" spacing={0} sx={{ width: '100%', mb: 3 }}>
                             <SocialButton href="https://github.com/niyaj-kumanali" target="_blank" whileHover={{ scale: 0.98 }}>
                                 <Github size={32} />
-                                <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace" }}>GITHUB</Typography>
+                                <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem' }}>GITHUB</Typography>
                             </SocialButton>
                             <SocialButton href="https://linkedin.com/in/niyaj-kumanali" target="_blank" whileHover={{ scale: 0.98 }}>
                                 <Linkedin size={32} />
-                                <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace" }}>LINKEDIN</Typography>
+                                <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem' }}>LINKEDIN</Typography>
                             </SocialButton>
                             <SocialButton href="mailto:niyajkumanali@gmail.com" whileHover={{ scale: 0.98 }}>
                                 <Mail size={32} />
-                                <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace" }}>EMAIL</Typography>
+                                <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem' }}>EMAIL</Typography>
                             </SocialButton>
                             <SocialButton href="https://www.google.com/maps/search/?api=1&query=Bengaluru,+India" target="_blank" whileHover={{ scale: 0.98 }}>
                                 <MapIcon size={32} />
-                                <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace" }}>LOCATION</Typography>
+                                <Typography variant="caption" sx={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem' }}>LOCATION</Typography>
                             </SocialButton>
                         </Stack>
                     </Box>
 
                     <Box>
                         <form onSubmit={handleSubmit}>
-                            <Stack spacing={4}>
-                                <BrutalistInput name="name" required fullWidth label="NAME" variant="outlined" />
-                                <BrutalistInput name="email" required type="email" fullWidth label="EMAIL" variant="outlined" />
-                                <BrutalistInput name="subject" required fullWidth label="SUBJECT" variant="outlined" />
-                                <BrutalistInput name="message" required fullWidth label="MESSAGE" multiline rows={6} variant="outlined" />
+                            <Stack spacing={2.5}>
+                                <BrutalistInput name="name" required fullWidth label="YOUR NAME" variant="outlined" size="medium" />
+                                <BrutalistInput name="email" required type="email" fullWidth label="YOUR EMAIL" variant="outlined" size="medium" />
+                                <BrutalistInput name="subject" required fullWidth label="YOUR SUBJECT" variant="outlined" size="medium" />
+                                <BrutalistInput name="message" required fullWidth label="YOUR MESSAGE" multiline rows={4} variant="outlined" />
 
                                 <Button
                                     fullWidth
@@ -141,8 +141,8 @@ const Contact = () => {
                                     variant="contained"
                                     endIcon={status === 'loading' ? null : <Send />}
                                     sx={{
-                                        py: 3,
-                                        fontSize: '1.5rem',
+                                        py: 1.5,
+                                        fontSize: '1.1rem',
                                         fontWeight: 900,
                                         backgroundColor: '#fff',
                                         color: '#000',

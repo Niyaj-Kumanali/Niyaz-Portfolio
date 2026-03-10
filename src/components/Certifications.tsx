@@ -36,7 +36,7 @@ const Certifications = () => {
     return (
         <Section id="certifications">
             <SectionInner>
-                <Stack direction="row" spacing={3} alignItems="center" sx={{ mb: 8 }}>
+                <Stack direction="row" spacing={3} alignItems="center" sx={{ mb: 4 }}>
                     <SectionHeading title="CERTIFICATIONS." sx={{ mb: 0 }} />
                 </Stack>
 

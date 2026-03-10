@@ -89,7 +89,7 @@ const Navbar = () => {
                         </Typography>
 
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <NavButton as="button" onClick={() => triggerNav(5)}>
+                            <NavButton as="button" onClick={() => triggerNav(6)}>
                                 Get in touch
                             </NavButton>
                         </motion.div>

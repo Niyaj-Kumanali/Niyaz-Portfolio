@@ -3,14 +3,19 @@ import { styled } from '@mui/material/styles';
 import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Section, SectionInner } from './common/Section';
 
-const FooterLink = styled('a')({
+const FooterLink = styled('button')({
     color: 'rgba(255, 255, 255, 0.5)',
     textDecoration: 'none',
     fontFamily: "'JetBrains Mono', monospace",
     fontSize: '0.8rem',
     transition: 'color 0.3s ease',
+    background: 'transparent',
+    border: 'none',
+    padding: 0,
+    cursor: 'pointer',
+    textAlign: 'left',
     '&:hover': {
-        color: '#fff',
+        color: '#20B2AA',
     }
 });
 
@@ -25,6 +30,10 @@ const SocialIcon = styled('a')({
 });
 
 const Footer = () => {
+    const triggerNav = (index: number) => {
+        window.dispatchEvent(new CustomEvent('navigateToSection', { detail: { index } }));
+    };
+
     return (
         <Section id="footer">
             <SectionInner justifyContent="center" showNextButton={false}>
@@ -87,11 +96,14 @@ const Footer = () => {
                             <Typography variant="overline" sx={{ color: '#20B2AA', display: 'block', mb: 3, letterSpacing: '0.2em' }}>
                                 QUICK LINKS
                             </Typography>
-                            <Stack spacing={1}>
-                                <FooterLink href="#">Home</FooterLink>
-                                <FooterLink href="#skills">Stack</FooterLink>
-                                <FooterLink href="#projects">Work</FooterLink>
-                                <FooterLink href="#experience">Log</FooterLink>
+                            <Stack spacing={1.5}>
+                                <FooterLink onClick={() => triggerNav(0)}>HOME</FooterLink>
+                                <FooterLink onClick={() => triggerNav(1)}>SKILLS</FooterLink>
+                                <FooterLink onClick={() => triggerNav(2)}>EXPERIENCE</FooterLink>
+                                <FooterLink onClick={() => triggerNav(3)}>PROJECTS</FooterLink>
+                                <FooterLink onClick={() => triggerNav(4)}>EDUCATION</FooterLink>
+                                <FooterLink onClick={() => triggerNav(5)}>CERTIFICATIONS</FooterLink>
+                                <FooterLink onClick={() => triggerNav(6)}>CONTACT</FooterLink>
                             </Stack>
                         </Box>
                     </Box>

@@ -12,8 +12,8 @@ const SectionHeading = ({ title, sx }: SectionHeadingProps) => {
             width: '100%',
             backgroundColor: 'transparent',
             borderBottom: '2px solid #fff',
-            pt: { xs: 8, md: 8 },
-            mb: 5,
+            pt: { xs: 1, md: 1 },
+            mb: 2,
             ...sx
         }}>
             <Typography

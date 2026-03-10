@@ -15,9 +15,9 @@ const Education = () => {
 
     return (
         <Section id="education">
-            <SectionInner justifyContent="center">
+            <SectionInner>
                 <Box sx={{ maxWidth: '800px' }}>
-                    <Stack direction="row" spacing={3} alignItems="center" sx={{ mb: 10 }}>
+                    <Stack direction="row" spacing={3} alignItems="center" sx={{ mb: 4 }}>
                         <SectionHeading title="EDUCATION." sx={{ mb: 0 }} />
                     </Stack>
 

@@ -20,10 +20,10 @@ export const Section = styled(Box)(({ theme }) => ({
     msOverflowStyle: 'none',
     scrollbarWidth: 'none',
     [theme.breakpoints.down('lg')]: {
-        padding: theme.spacing(10, 6),
+        padding: theme.spacing(4, 6),
     },
     [theme.breakpoints.down('md')]: {
-        padding: theme.spacing(8, 3),
+        padding: theme.spacing(3, 3),
     }
 }));
 
@@ -98,7 +98,7 @@ export const SectionInner = ({
                         '&::-webkit-scrollbar': { display: 'none' },
                         msOverflowStyle: 'none',
                         scrollbarWidth: 'none',
-                        py: 4 // Internal padding for content spacing
+                        py: 2 // Reduced internal padding for tighter spacing
                     }}
                 >
                     {children}

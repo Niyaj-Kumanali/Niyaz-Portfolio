@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     Box,
     Typography,
@@ -8,7 +7,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import SectionHeading from './SectionHeading';
-import { Section, SectionInner, useScrollContainer } from './common/Section';
+import { Section, SectionInner } from './common/Section';
 
 const ImageContainer = styled(motion.div)({
     width: '100%',
@@ -21,10 +20,12 @@ const ImageContainer = styled(motion.div)({
 
 const ProjectImage = styled(motion.img)({
     width: '100%',
-    height: '140%', // Excess height for parallax
+    height: '100%',
     objectFit: 'cover',
-    // position: 'absolute',
-    // top: '0%', // Offset to center the excess
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
     filter: 'grayscale(0.5)',
     transition: 'filter 0.5s ease',
     '&:hover': {
@@ -33,7 +34,6 @@ const ProjectImage = styled(motion.img)({
 });
 
 const Projects = () => {
-    const containerRef = useScrollContainer();
     const projects = [
         {
             title: "Partner Inventory Management",
@@ -68,20 +68,11 @@ const Projects = () => {
                     <SectionHeading title="SELECTED WORK." />
                 </Box>
 
-                <Stack spacing={20} sx={{ mt: 10 }}>
+                <Stack spacing={20} sx={{ mt: 4 }}>
                     {projects.map((project, index) => {
-                        const targetRef = useRef(null);
-                        const { scrollYProgress } = useScroll({
-                            target: targetRef,
-                            container: containerRef || undefined,
-                            offset: ["start end", "end start"]
-                        });
-                        const y = useTransform(scrollYProgress, [0, 1], [-80, 80]);
-
                         return (
                             <Box
                                 key={index}
-                                ref={targetRef}
                                 sx={{
                                     display: 'grid',
                                     gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' },
@@ -94,7 +85,6 @@ const Projects = () => {
                                     <ProjectImage
                                         src={project.image}
                                         alt={project.title}
-                                        style={{ y }}
                                         onError={(e: any) => {
                                             e.target.src = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200";
                                         }}
